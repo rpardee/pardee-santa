@@ -1,9 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Pardee Family Secret Santa Tracker</title>
-</head>
-<body>
-<p>B OOBIES!!!</p>
-</body>
-</html>
+<h1>Not-So-Secret Santa Assignments for <%= @year %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>This family:</th>
+      <th>Buys for:</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @families.each do |f| %>
+    <tr>
+      <td><%= h f if f %></td>
+      <td><%= f.buys_for(@year) if f %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p>See what the assignments were/are/will be in:</p>
+<ul>
+  <% (@year.to_i - 1).upto(@year.to_i + 1) do |yr| %>  
+    <li><%= link_to yr, :controller => "main", :year => yr %></li>
+  <% end %>
+</ul>
+<p>(Hint: just put the year at the end of the URL in your browser to do any year you like.)</p>
+<p><%= link_to "This year's assignments", :controller => "main", :year => nil %></p>

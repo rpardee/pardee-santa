@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Family.delete_all
+Family.create([
+  {name: "Ted & Laurel", identifier: "T&L"},
+  {name: "Mary & Mike", identifier: "M&M"},
+  {name: "Grandma/Mom Pardee", identifier: "R&A"},
+  {name: "Tim & Jen", identifier: "T&J"}
+  ])  
