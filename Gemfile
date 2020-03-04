@@ -39,7 +39,7 @@ gem 'tzinfo-data'
 
 gem 'cowsay'
 
-gem 'puma', '2.15.3'
+gem 'puma', '3.12.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
